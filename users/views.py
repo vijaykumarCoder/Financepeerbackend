@@ -57,7 +57,7 @@ def serialize_user(user):
 
 @api_view(['POST'])
 def login(request):
-    print("hi")
+    # print("hi",json.loads(request.body))
     serializer = AuthTokenSerializer(data=request.data)
     serializer.is_valid(raise_exception=True)
     user = serializer.validated_data['user']
